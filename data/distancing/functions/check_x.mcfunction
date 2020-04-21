@@ -6,8 +6,8 @@ scoreboard players operation $linex dist_mem *= $10 dist_x
 scoreboard players operation $linex dist_mem += $5 dist_x
 scoreboard players operation $x dist_mem -= $linex dist_mem
 
-execute if score $x dist_mem matches 10.. at @s run tp @s ~-1 ~ ~ 
-execute if score $x dist_mem matches ..-10 at @s run tp @s ~1 ~ ~ 
+execute if score $x dist_mem matches 10..160 at @s run tp @s ~-1 ~ ~ 
+execute if score $x dist_mem matches -160..-10 at @s run tp @s ~1 ~ ~ 
 execute if score $x dist_mem matches 160.. run function distancing:move_to_line
 execute if score $x dist_mem matches ..-160 run function distancing:move_to_line
 
