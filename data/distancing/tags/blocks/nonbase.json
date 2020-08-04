@@ -4,8 +4,11 @@
     "minecraft:air",
     "minecraft:cave_air",
     "minecraft:void_air",
-	"minecraft:bedrock",
-	"minecraft:lava",
-	"minecraft:water"
+	  "minecraft:bedrock",
+	  "minecraft:lava",
+    "minecraft:water",
+    "#minecraft:fire",
+    "#minecraft:campfires",
+    "minecraft:magma_block"
   ]
 }
