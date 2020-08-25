@@ -9,3 +9,5 @@ execute as @a run function distancing:try_make_portal
 forceload remove all
 
 execute as @a run scoreboard players operation @s dist_list = @s dist_x
+
+execute as @e[type=eye_of_ender] run function distancing:set_eye
