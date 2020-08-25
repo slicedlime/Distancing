@@ -6,6 +6,7 @@ execute as @a[gamemode=!spectator] at @s run function distancing:check_x
 execute as @e[type=ender_pearl] run data modify entity @s Motion[0] set value 0.0d
 
 execute as @a run function distancing:try_make_portal
+execute as @a[scores={dist_dimension=1}] at @s run function distancing:check_end_exits
 forceload remove all
 
 execute as @a run scoreboard players operation @s dist_list = @s dist_x
