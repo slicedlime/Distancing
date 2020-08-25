@@ -19,4 +19,7 @@ execute if score $Next dist_x matches 0 run scoreboard players set $Next dist_x 
 scoreboard players set $start dist_eyes 1
 scoreboard players set $initialized dist_mem 1
 
+scoreboard objectives add dist_list dummy "Player Lines"
+scoreboard objectives setdisplay list dist_list
+
 function distancing:spread_to_line
