@@ -9,5 +9,7 @@ setblock ~-1 64 0 bedrock
 setblock ~ 64 1 bedrock
 setblock ~ 64 -1 bedrock
 
-execute if entity @e[type=ender_dragon] run setblock ~ 64 0 air
-execute unless entity @e[type=ender_dragon] run setblock ~ 64 0 end_portal
+execute store success score $success dist_mem run clone -3 0 -3 3 255 3 -3 0 -3 filtered minecraft:end_portal move
+
+execute if score $success dist_mem matches 0 run setblock ~ 64 0 air
+execute unless score $success dist_mem matches 0 run setblock ~ 64 0 end_portal
