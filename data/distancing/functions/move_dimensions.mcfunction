@@ -1,4 +1,4 @@
-# Move to the line after a dimension switch
+# Move to line after switching dimensions
 
 function distancing:move_to_line
 scoreboard players operation $x dist_mem = @s dist_x
