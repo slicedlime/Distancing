@@ -21,5 +21,3 @@ scoreboard players set $initialized dist_mem 1
 
 scoreboard objectives add dist_list dummy "Player Lines"
 scoreboard objectives setdisplay list dist_list
-
-function distancing:spread_to_line
