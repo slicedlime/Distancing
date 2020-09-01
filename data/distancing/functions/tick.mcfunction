@@ -12,3 +12,8 @@ forceload remove all
 execute as @a run scoreboard players operation @s dist_list = @s dist_x
 
 execute as @e[type=eye_of_ender] run function distancing:set_eye
+
+execute as @a[scores={dist_dimension=-1},tag=!dist_has_fortress] at @s run function distancing:try_place_fortress
+
+scoreboard players add $spawn_tick dist_mem 1
+execute if score $spawn_tick dist_mem matches 1200.. at @a[scores={dist_dimension=-1},sort=random,limit=1] run function distancing:spawn_fortress_mob
