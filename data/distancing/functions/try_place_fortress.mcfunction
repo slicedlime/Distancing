@@ -1,7 +1,6 @@
 # Find the fortress location and try to place a portal there
 
-summon area_effect_cloud ~ ~ ~ {Tags:["dist_locator"],Duration:2}
-execute store result entity @e[type=area_effect_cloud,tag=dist_locator,limit=1] Pos[2] double 1 run scoreboard players get $fortress dist_mem
-execute at @e[type=area_effect_cloud,tag=dist_locator,limit=1] run function distancing:place_fortress
-tp @e[type=area_effect_cloud,tag=dist_locator,limit=1] ~ ~ ~
-kill @e[type=area_effect_cloud,tag=dist_locator,limit=1]
+scoreboard players operation $fortress_copy dist_mem = $fortress dist_mem
+
+execute unless score $fortress_copy dist_mem matches 1024.. positioned ~ ~ 0 run function distancing:find_fortress_512
+execute if score $fortress_copy dist_mem matches 1024.. positioned ~ ~ 1024 run function distancing:find_fortress_512
