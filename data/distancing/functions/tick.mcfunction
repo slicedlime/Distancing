@@ -13,7 +13,7 @@ execute as @a run scoreboard players operation @s dist_list = @s dist_x
 
 execute as @e[type=eye_of_ender] run function distancing:set_eye
 
-execute as @a[scores={dist_dimension=-1},tag=!dist_has_fortress] at @s run function distancing:try_place_fortress
+execute as @a[gamemode=!spectator,scores={dist_dimension=-1},tag=!dist_has_fortress] at @s run function distancing:try_place_fortress
 
 scoreboard players add $spawn_tick dist_mem 1
-execute if score $spawn_tick dist_mem matches 1200.. at @a[scores={dist_dimension=-1},sort=random,limit=1] run function distancing:spawn_fortress_mob
+execute if score $spawn_tick dist_mem matches 1200.. at @e[type=area_effect_cloud,tag=dist_fortress,sort=random,limit=1] if entity @a[gamemode=!spectator,distance=..120,limit=1] unless entity @a[gamemode=!spectator,distance=..20,limit=1] run function distancing:spawn_random_fortress_mob
